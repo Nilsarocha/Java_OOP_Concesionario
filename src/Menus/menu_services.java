@@ -1,6 +1,7 @@
 package Menus;
 
 import Modules.functions.CRUD.create_functions;
+import Modules.functions.CRUD.delete_functions;
 import Modules.functions.CRUD.read_functions;
 import Utils.functions_menu;
 import javax.swing.JOptionPane;
@@ -53,7 +54,7 @@ public class menu_services {
 						break;
 	
 					case 3: //Delete
-						JOptionPane.showMessageDialog(null, "Delete");
+						delete_functions.delete_Sale(sal);
 						key_menu_venta = true;
 						break;
 	

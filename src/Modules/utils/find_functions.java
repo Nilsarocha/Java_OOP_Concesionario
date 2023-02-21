@@ -1,4 +1,4 @@
-package  Utils;
+package  Modules.utils;
 
 import Modules.Concesionario.Clases.Singleton;
 import Modules.Concesionario.Clases.Sale;

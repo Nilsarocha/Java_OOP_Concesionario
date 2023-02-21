@@ -1,6 +1,9 @@
-package Utils;
+package Modules.utils;
 
 import javax.swing.JOptionPane;
+
+import utils.regular_exp;
+import utils.validates;
 
 public class data_functions {
 
@@ -9,8 +12,9 @@ public class data_functions {
 		String id = "";
 
 		do {
-			id = JOptionPane.showInputDialog(null, "Escriba el identificador", "id", JOptionPane.QUESTION_MESSAGE);
-			result = true;
+			id = validates.cad(message, title);
+			result = regular_exp.id(id);
+
 			if (result == false) {
 				JOptionPane.showMessageDialog(null, "No es un codigo de referencia valido", "Error", JOptionPane.ERROR_MESSAGE);
 			} else {
@@ -20,6 +24,18 @@ public class data_functions {
 		return id;
 	}
 	
+	public static String askclient_name(String message, String title ){
+
+
+		String client_name = ""; 
+		boolean result = false;
+
+		client_name = validates.cad(message, title);
+		result = regular_exp.client_name(client_name);
+
+
+		return client_name;
+	}
 
 
 

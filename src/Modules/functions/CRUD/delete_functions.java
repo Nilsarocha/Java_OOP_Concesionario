@@ -1,12 +1,10 @@
 package Modules.functions.CRUD;
 
-import Modules.Concesionario.Clases.Sale;
-
 import javax.swing.JOptionPane;
 
-
+import Modules.Concesionario.Clases.Sale;
 import Modules.Concesionario.Clases.Singleton;
-import Utils.find_functions;
+import Modules.utils.find_functions;
 
 public class delete_functions {
  

@@ -35,5 +35,4 @@ public class delete_functions {
 
     }
 
-
 }

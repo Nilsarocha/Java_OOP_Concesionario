@@ -124,5 +124,3 @@ public class read_functions {
 		}		
 	}
 }
-
-// hola

@@ -30,11 +30,21 @@ public class data_functions {
 		String client_name = ""; 
 		boolean result = false;
 
-		client_name = validates.cad(message, title);
-		result = regular_exp.client_name(client_name);
+		do{
+
+			client_name = validates.cad(message, title);
+			result = regular_exp.client_name(client_name);
+
+			if ( result == false){
+				JOptionPane.showMessageDialog(null, "No es un nombre válido", "Error", JOptionPane.ERROR_MESSAGE);
+			}else {
+				result = true;	
+			}
 
 
+		}while (result == false);	
 		return client_name;
+
 	}
 
 

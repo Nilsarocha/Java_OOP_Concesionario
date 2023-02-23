@@ -4,7 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class regular_exp {
-    private static final String Expresion_client_name = "/^([ÁÉÍÓÚñáéíóúa-z]+[ ]?){1,4}$/i";
+    private static final String Expresion_client_name = "^[A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ]*([ ][A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ]*)?$";
     private static final String Expresion_id = "^[a-zA-Z_$][a-zA-Z_$0-9]*$";
     
 

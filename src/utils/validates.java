@@ -18,12 +18,12 @@ public class validates {
                 correcto = true;
 
                 if (cad.equals("")){
-                    JOptionPane.showMessageDialog(null, "Error en la instroducción de datos indetificador", "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Error en la instroducción de datos", "Error", JOptionPane.ERROR_MESSAGE);
                     correcto = false;
                 }
 
             } catch (Exception e){
-                JOptionPane.showMessageDialog(null, "Error en la instroducción de datos indetificador", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Error en la instroducción de datos", "Error", JOptionPane.ERROR_MESSAGE);
                 correcto = false;
 
                 
@@ -85,8 +85,5 @@ public class validates {
         return (String) selection;
 
     }
-
-
-
 
 }

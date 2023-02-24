@@ -19,7 +19,7 @@ public class read_functions {
 	}
 
 
-	public static void read_sale(Sale sal ) {
+	public static void read_Sale(Sale sal ) {
 		
 	
 		String[] menu = {"All", "One to one", "Volver"};

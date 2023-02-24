@@ -9,6 +9,7 @@ import Modules.Concesionario.Clases.Singleton;
 import Modules.functions.CRUD.create_functions;
 import Modules.functions.CRUD.delete_functions;
 import Modules.functions.CRUD.read_functions;
+import Modules.functions.CRUD.update_functions;
 import Modules.utils.functions_menu;
 
 public class menu_services {
@@ -46,12 +47,12 @@ public class menu_services {
 						break;
 	
 					case 1: //read
-						read_functions.read_sale(sal);
+						read_functions.read_Sale(sal);
 						key_menu_venta = true;
 						break;
 	
 					case 2: //Update
-						JOptionPane.showMessageDialog(null, "Update");
+						update_functions.update_Sale(sal);
 						key_menu_venta = true;
 						break;
 	

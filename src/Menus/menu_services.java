@@ -8,6 +8,7 @@ import Modules.Concesionario.Clases.Sale;
 import Modules.Concesionario.Clases.Singleton;
 import Modules.functions.CRUD.create_functions;
 import Modules.functions.CRUD.delete_functions;
+import Modules.functions.CRUD.order_functions;
 import Modules.functions.CRUD.read_functions;
 import Modules.functions.CRUD.update_functions;
 import Modules.utils.functions_menu;
@@ -18,8 +19,10 @@ public class menu_services {
 
 
 		String[] services = { "Venta", "Alquiler", "Vinilar", "Salir" };
-		String[] crud = { "Create", "Read", "Update", "Delete", "Atrás", "Salir" };
-		boolean key_menu_services, key_menu_venta, key_menu_alquiler, key_menu_vinilar = false;
+		String[] crud = { "Create", "Read", "Update", "Delete", "Ordenar", "Atrás", "Salir" };
+		boolean key_menu_services, key_menu_alquiler, key_menu_vinilar = false;
+		boolean key_menu_venta = false;
+		int option_menu_crud = 0;
 		Sale sal = null;
 		Singleton.sale = new ArrayList <Sale> ();
 
@@ -60,8 +63,13 @@ public class menu_services {
 						delete_functions.delete_Sale(sal);
 						key_menu_venta = true;
 						break;
+
+					case 4: // ordenar	
+						System.out.println("option_menu_services= " + option_menu_crud);
+						order_functions.order_Sale();
+						break;
 	
-					case 4: //Atrás
+					case 5: //Atrás
 						JOptionPane.showMessageDialog(null, "Atrás");
 						key_menu_venta = false;
 						break;
@@ -155,8 +163,13 @@ public class menu_services {
 						JOptionPane.showMessageDialog(null, "Delete");
 						key_menu_vinilar = true;
 						break;
+
+					case 4: // ordenar	
+
+
+
 	
-					case 4: //Atrás
+					case 5: //Atrás
 						JOptionPane.showMessageDialog(null, "Atrás");
 						key_menu_vinilar = false;
 						break;

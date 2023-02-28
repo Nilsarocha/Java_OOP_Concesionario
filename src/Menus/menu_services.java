@@ -20,48 +20,45 @@ public class menu_services {
 
 		String[] services = { "Venta", "Alquiler", "Vinilar", "Salir" };
 		String[] crud = { "Create", "Read", "Update", "Delete", "Ordenar", "Atrás", "Salir" };
-		boolean key_menu_services, key_menu_alquiler, key_menu_vinilar = false;
-		boolean key_menu_venta = false;
+		boolean key_menu_services = false;
 		int option_menu_crud = 0;
 		Sale sal = null;
 		Singleton.sale = new ArrayList <Sale> ();
+		Boolean key_crud = false;
 
 		do {
-
+			key_menu_services = true;
 
 			int option_menu_services = functions_menu.menubuttons(services, "Seleccione un servicio", "Servicios");
-
 
 			switch (option_menu_services) {
 
 			case 0:{ //Venta
-				key_menu_services = true;
+	
 				do{
 					int option_menu_venta = functions_menu.menubuttons(crud, "Seleccione el tipo de servicio", "Venta");
 	
-	
+					key_crud = true;
+					
 					switch (option_menu_venta) {
 	
 	
 					case 0: //create
 						
 						create_functions.create_Sale(sal);
-						key_menu_venta = true;
+
 						break;
 	
 					case 1: //read
 						read_functions.read_Sale(sal);
-						key_menu_venta = true;
 						break;
 	
 					case 2: //Update
 						update_functions.update_Sale(sal);
-						key_menu_venta = true;
 						break;
 	
 					case 3: //Delete
 						delete_functions.delete_Sale(sal);
-						key_menu_venta = true;
 						break;
 
 					case 4: // ordenar	
@@ -71,64 +68,61 @@ public class menu_services {
 	
 					case 5: //Atrás
 						JOptionPane.showMessageDialog(null, "Atrás");
-						key_menu_venta = false;
+						key_crud = false;
 						break;
 	
 					default: //Salir
 						JOptionPane.showMessageDialog(null, "Salir");
-						key_menu_venta = false;
+						key_crud = false;
 						key_menu_services = false;
 						break;
 	
 					}	
-				}while(key_menu_venta == true);
+				}while(key_crud != false);
 				break;
 		}
 
 		//----------------------CASE 1----------------------------------------------------	
 			
 			case 1:{ //Alquiler
-				key_menu_services = true;
+
 				do{
 					int option_menu_alquiler = functions_menu.menubuttons(crud, "Seleccione el tipo de servicio", "Alquiler");
 	
-	
+					key_crud = true;
+
 					switch (option_menu_alquiler) {
 	
 	
 					case 0: //create
 						JOptionPane.showMessageDialog(null, "Create");
-						key_menu_alquiler = true;
 						break;
 	
 					case 1: //read
 						JOptionPane.showMessageDialog(null, "Read");
-						key_menu_alquiler = true;
 						break;
 	
 					case 2: //Update
 						JOptionPane.showMessageDialog(null, "Update");
-						key_menu_alquiler = true;
 						break;
 	
 					case 3: //Delete
 						JOptionPane.showMessageDialog(null, "Delete");
-						key_menu_alquiler = true;
 						break;
 	
 					case 4: //Atrás
 						JOptionPane.showMessageDialog(null, "Atrás");
-						key_menu_alquiler = false;
+						key_crud = false;
 						break;
 	
 					default: //Salir
 						JOptionPane.showMessageDialog(null, "Salir");
-						key_menu_alquiler = false;
+						key_crud = false;
 						key_menu_services = false;
 						break;
 	
 					}	
-				}while(key_menu_alquiler == true);
+				}while(key_crud != false);
 				break;
 		}
 
@@ -136,32 +130,29 @@ public class menu_services {
 		////------------ Vinilar-----------------		
 
 			case 2: { //Vinilar
-				key_menu_services = true;
+				
 				do{
 					int option_menu_vinilar = functions_menu.menubuttons(crud, "Seleccione el tipo de servicio", "Vinilar");
 	
-	
+					key_crud = true;
+
 					switch (option_menu_vinilar) {
 	
 	
 					case 0: //create
 						JOptionPane.showMessageDialog(null, "Create");
-						key_menu_vinilar = true;
 						break;
 	
 					case 1: //read
 						JOptionPane.showMessageDialog(null, "Read");
-						key_menu_vinilar = true;
 						break;
 	
 					case 2: //Update
 						JOptionPane.showMessageDialog(null, "Update");
-						key_menu_vinilar = true;
 						break;
 	
 					case 3: //Delete
 						JOptionPane.showMessageDialog(null, "Delete");
-						key_menu_vinilar = true;
 						break;
 
 					case 4: // ordenar	
@@ -171,19 +162,19 @@ public class menu_services {
 	
 					case 5: //Atrás
 						JOptionPane.showMessageDialog(null, "Atrás");
-						key_menu_vinilar = false;
+						key_crud = false;
 						break;
 	
 					default: //Salir
 						JOptionPane.showMessageDialog(null, "Salir");
-						key_menu_vinilar = false;
+						key_crud = false;
 						key_menu_services = false;
 						break;
 	
 					}	
-				}while(key_menu_vinilar == true);
+				}while(key_crud != false);
 				break;
-		}
+			}
 				
 		//-------- salir-----------------		
 
@@ -194,7 +185,7 @@ public class menu_services {
 				break;
 			}	
 
-	}while(key_menu_services == true);
+		}while(key_menu_services != false);
 
-}
+	}
 }

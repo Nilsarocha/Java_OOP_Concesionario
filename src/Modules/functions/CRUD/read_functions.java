@@ -24,8 +24,9 @@ public class read_functions {
 	
 		String[] menu = {"All", "One to one", "Volver"};
 		boolean key_menu_read = false;
+		boolean key_volver = false;
 		int location = -1;
-		String[] atributos = {"id", "client_name", "car_type", "payment_method", "price", "payment_type", "Todos"};
+		String[] atributos = {"id", "client_name", "car_type", "payment_method", "price", "payment_type", "Volver", "Todos"};
 		String atributo = "";
 
 		
@@ -65,45 +66,53 @@ public class read_functions {
 						
 						int option_menu_venta_caracteristicas = functions_menu.menubuttons(atributos, "¿ Qué operación desea realizar ?", "Elija la opción deseada");
 
-						switch (option_menu_venta_caracteristicas) {
+						do {
 
-						case 0: 
-							
-							atributo = ("Identificador: " + sal.getid());
-							break;
-		
-						case 1: 
-							atributo = ("Nombre del cliente: " + sal.getclient_name());
-							break;
-		
-						case 2: 
-							atributo = ("Tipo de vehículo: " + sal.getcar_type());
-							break;
-		
-						case 3: 
-							atributo = ("Método de pago: " + sal.getpayment_method());
-							break;
-		
-						case 4: 
-							atributo = ("Precio: " + sal.getprice());
-							break;
-							
-						case 5: 
-							atributo = ("Tipo de pago: " + sal.getpayment_type());
-							break;
-							
-						case 6: 
-							atributo = (sal.toString());
+							switch (option_menu_venta_caracteristicas) {
 
-		
-						default: 
-							key_menu_read = false;
-							JOptionPane.showMessageDialog(null, "Salir");
+							case 0: 
+								
+								atributo = ("Identificador: " + sal.getid());
+								break;
+			
+							case 1: 
+								atributo = ("Nombre del cliente: " + sal.getclient_name());
+								break;
+			
+							case 2: 
+								atributo = ("Tipo de vehículo: " + sal.getcar_type());
+								break;
+			
+							case 3: 
+								atributo = ("Método de pago: " + sal.getpayment_method());
+								break;
+			
+							case 4: 
+								atributo = ("Precio: " + sal.getprice());
+								break;
+								
+							case 5: 
+								atributo = ("Tipo de pago: " + sal.getpayment_type());
+								break;
 
-							break;
-						}	
-						JOptionPane.showMessageDialog(null, atributo, "atributo", JOptionPane.INFORMATION_MESSAGE);
+							case 6:	
+								atributo = ("Volver");
+								key_volver = false;
+								break;
+								
+							case 7: 
+								atributo = (sal.toString());
+
+			
+							default: 
+								key_menu_read = false;
+								JOptionPane.showMessageDialog(null, "Salir");
+
+								break;
+							}	
+							JOptionPane.showMessageDialog(null, atributo, "atributo", JOptionPane.INFORMATION_MESSAGE);
 						
+					}while (key_volver != false);
 
 					}else {
 						JOptionPane.showMessageDialog(null, "No existe el producto", "No existe", JOptionPane.ERROR_MESSAGE);

@@ -109,8 +109,12 @@ public class menu_services {
 					case 3: //Delete
 						JOptionPane.showMessageDialog(null, "Delete");
 						break;
+
+					case 4: //Ordenar
+						JOptionPane.showMessageDialog(null, "Atrás");
+						break;
 	
-					case 4: //Atrás
+					case 5: //Atrás
 						JOptionPane.showMessageDialog(null, "Atrás");
 						key_crud = false;
 						break;
@@ -130,7 +134,7 @@ public class menu_services {
 		////------------ Vinilar-----------------		
 
 			case 2: { //Vinilar
-				
+
 				do{
 					int option_menu_vinilar = functions_menu.menubuttons(crud, "Seleccione el tipo de servicio", "Vinilar");
 	
@@ -155,7 +159,9 @@ public class menu_services {
 						JOptionPane.showMessageDialog(null, "Delete");
 						break;
 
-					case 4: // ordenar	
+					case 4: // ordenar
+					JOptionPane.showMessageDialog(null, "Atrás");
+					break;	
 
 
 

@@ -11,7 +11,7 @@ public class create_functions {
 	public static void create_Sale(Sale sal) {
 		int location = -1;
 
-		sal = functions_services.create_sale_id();
+		sal = functions_services.ask_sale_id(" Cual es el identificador del producto que quieres crear ?");
 		
 	
 		location = find_functions.find_sale(sal);

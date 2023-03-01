@@ -34,9 +34,9 @@ public class functions_services {
 
 	}	
 
-	public static Sale create_sale_id () {
+	public static Sale ask_sale_id (String message) {
 		
-		Singleton.id = data_functions.askid("¿Qué identificador va a asignar al servicio?", "Id");
+		Singleton.id = data_functions.askid(message, "Id");
 
 		return new Sale (Singleton.id);
 
@@ -49,7 +49,7 @@ public static void update_Sale_id(Sale sal, Service ser) {
 
 	int location = -1;
 
-	sal = functions_services.create_sale_id();
+	sal = functions_services.ask_sale_id("¿ Cual es el identificador del producto que quieres modificar ?");
 
 	location = find_functions.find_sale(sal);
 

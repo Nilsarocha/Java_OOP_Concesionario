@@ -10,14 +10,6 @@ import Modules.utils.functions_menu;
 
 public class read_functions {
 
-	public static Sale find_sale_id () {
-
-		Singleton.id = data_functions.askid("¿ Cual es el código de la venta ?", "Código de referencia");
-
-		return new Sale (Singleton.id);
-
-	}
-
 
 	public static void read_Sale(Sale sal ) {
 		
@@ -29,7 +21,8 @@ public class read_functions {
 		String[] atributos = {"id", "client_name", "car_type", "payment_method", "price", "payment_type", "Volver", "Todos"};
 		String atributo = "";
 
-		
+
+
 		if (Singleton.sale.isEmpty()) {
 			JOptionPane.showMessageDialog(null, "No existe ninguna venta para poder leer", "Error", JOptionPane.ERROR_MESSAGE);
 
@@ -58,7 +51,7 @@ public class read_functions {
 					key_menu_read = true;
 					
 					location = -1;
-					sal = find_sale_id();	
+					sal = functions_services.ask_sale_id("¿ Cual es el identificador del servicio que desea leer ?");	
 					location = find_functions.find_sale(sal);
 				
 					if (location != -1) {

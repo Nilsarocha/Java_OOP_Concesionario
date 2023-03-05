@@ -1,6 +1,8 @@
 package  Modules.utils;
 
 import Modules.Concesionario.Clases.Singleton;
+
+import Modules.Concesionario.Clases.Rent;
 import Modules.Concesionario.Clases.Sale;
 
 public class find_functions {
@@ -15,6 +17,27 @@ public class find_functions {
 		
 			
 			if ((Singleton.sale.get(i)).equals(sale)) { 
+					
+				return i; 
+			}
+		}
+		return -1;
+		
+	}
+
+
+	////////////// rent /////////////
+
+	public static int find_rent(Rent rent) {
+	
+	
+			
+		for (int i = 0; i< Singleton.Rent.size(); i++) {
+	
+			
+		
+			
+			if ((Singleton.Rent.get(i)).equals(rent)) { 
 					
 				return i; 
 			}

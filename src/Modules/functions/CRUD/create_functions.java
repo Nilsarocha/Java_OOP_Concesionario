@@ -2,6 +2,7 @@ package Modules.functions.CRUD;
 
 import javax.swing.JOptionPane;
 
+import Modules.Concesionario.Clases.Rent;
 import Modules.Concesionario.Clases.Sale;
 import Modules.Concesionario.Clases.Singleton;
 import Modules.utils.find_functions;
@@ -23,4 +24,32 @@ public class create_functions {
 			Singleton.sale.add(sal);
 		}
 	}
+
+// create_rent
+
+	public static void create_Rent(Rent ren) {
+		int location = -1;
+
+		ren = functions_services.ask_rent_id(" Cual es el identificador del producto que quieres crear ?");
+		
+	
+		location = find_functions.find_rent(ren);
+		
+		if (location != -1) {
+			JOptionPane.showMessageDialog(null, "Ya existe este codigo en otro producto", "Error", JOptionPane.ERROR_MESSAGE);
+		} else {
+			ren = functions_services.create_rent();
+			Singleton.Rent.add(ren);
+		}
+	}
+
+
+
+
+
+
+
+
 }	
+
+

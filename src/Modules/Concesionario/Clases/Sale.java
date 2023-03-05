@@ -40,12 +40,12 @@ public class Sale extends Service {
 	
 	public String toString() {
 		
-		return "Venta/sale:" + "\n" + "ID =" + getid() + 
-				"\n" + "Nombre del cliente / Client name =" + getclient_name() + 
-				"\n" + "Tipo de coche / Car tipe =" + getcar_type() + 
-				"\n" + "Método de pago / Paymentmethod =" + getpayment_method() + 
-				"\n" + "Precio / Price =" + getprice() +
-				"\n" + "Método de pago / Payment type =" + getpayment_type();
+		return "Venta/sale:" + "\n" + "ID = " + getid() + 
+				"\n" + "Nombre del cliente / Client name = " + getclient_name() + 
+				"\n" + "Tipo de coche / Car tipe = " + getcar_type() + 
+				"\n" + "Método de pago / Paymentmethod = " + getpayment_method() + 
+				"\n" + "Precio / Price = " + getprice() +
+				"\n" + "Método de pago / Payment type = " + getpayment_type();
 	}
 
 }

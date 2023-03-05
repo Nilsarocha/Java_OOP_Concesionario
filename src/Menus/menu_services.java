@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
+import Modules.Concesionario.Clases.Rent;
 import Modules.Concesionario.Clases.Sale;
 import Modules.Concesionario.Clases.Singleton;
 import Modules.functions.CRUD.create_functions;
@@ -23,7 +24,9 @@ public class menu_services {
 		boolean key_menu_services = false;
 		int option_menu_crud = 0;
 		Sale sal = null;
+		Rent ren = null;
 		Singleton.sale = new ArrayList <Sale> ();
+		Singleton.Rent = new ArrayList<Rent>();
 		Boolean key_crud = false;
 
 		do {
@@ -95,23 +98,23 @@ public class menu_services {
 	
 	
 					case 0: //create
-						JOptionPane.showMessageDialog(null, "Create");
+						create_functions.create_Rent(ren);
 						break;
 	
 					case 1: //read
-						JOptionPane.showMessageDialog(null, "Read");
+						read_functions.read_Rent(ren);
 						break;
-	
+
 					case 2: //Update
-						JOptionPane.showMessageDialog(null, "Update");
+						update_functions.update_Rent(ren);
 						break;
 	
 					case 3: //Delete
-						JOptionPane.showMessageDialog(null, "Delete");
+						delete_functions.delete_Rent(ren);
 						break;
 
 					case 4: //Ordenar
-						JOptionPane.showMessageDialog(null, "Atrás");
+						order_functions.order_Rent();
 						break;
 	
 					case 5: //Atrás

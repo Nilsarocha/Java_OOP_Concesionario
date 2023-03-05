@@ -36,7 +36,7 @@ public class validates {
     
     ///////////// VALIDAR INT //////////////////
 
-    public static int price (String message, String title){
+    public static int number (String message, String title){
 
         int price = 0;
         String cad = "";

@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 import Modules.Concesionario.Clases.Rent;
 import Modules.Concesionario.Clases.Sale;
 import Modules.Concesionario.Clases.Singleton;
+import Modules.Concesionario.Clases.Vinyl;
 import Modules.functions.CRUD.create_functions;
 import Modules.functions.CRUD.delete_functions;
 import Modules.functions.CRUD.order_functions;
@@ -25,8 +26,10 @@ public class menu_services {
 		int option_menu_crud = 0;
 		Sale sal = null;
 		Rent ren = null;
+		Vinyl vin = null;
 		Singleton.sale = new ArrayList <Sale> ();
 		Singleton.Rent = new ArrayList<Rent>();
+		Singleton.Vinyl = new ArrayList<Vinyl>();
 		Boolean key_crud = false;
 
 		do {
@@ -147,28 +150,25 @@ public class menu_services {
 	
 	
 					case 0: //create
-						JOptionPane.showMessageDialog(null, "Create");
+						create_functions.create_vinyl(vin);
 						break;
 	
 					case 1: //read
-						JOptionPane.showMessageDialog(null, "Read");
+						read_functions.read_vinyl(vin);
 						break;
 	
 					case 2: //Update
-						JOptionPane.showMessageDialog(null, "Update");
+						update_functions.update_Vinyl(vin);
 						break;
 	
 					case 3: //Delete
-						JOptionPane.showMessageDialog(null, "Delete");
+						delete_functions.delete_Vinyl(vin);
 						break;
 
 					case 4: // ordenar
-					JOptionPane.showMessageDialog(null, "Atrás");
-					break;	
+						order_functions.order_Vinyl();
+						break;	
 
-
-
-	
 					case 5: //Atrás
 						JOptionPane.showMessageDialog(null, "Atrás");
 						key_crud = false;

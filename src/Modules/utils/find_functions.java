@@ -1,7 +1,7 @@
 package  Modules.utils;
 
 import Modules.Concesionario.Clases.Singleton;
-
+import Modules.Concesionario.Clases.Vinyl;
 import Modules.Concesionario.Clases.Rent;
 import Modules.Concesionario.Clases.Sale;
 
@@ -46,7 +46,24 @@ public class find_functions {
 		
 	}
 	
+	///////////////// vinilar //////////////////////
+	
+	public static int find_vinyl(Vinyl vinyl) {
 	
 	
+			
+		for (int i = 0; i< Singleton.Vinyl.size(); i++) {
+	
+			
+		
+			
+			if ((Singleton.Vinyl.get(i)).equals(vinyl)) { 
+					
+				return i; 
+			}
+		}
+		return -1;
+		
+	}
 	
 }

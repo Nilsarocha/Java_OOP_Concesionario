@@ -5,6 +5,7 @@ import javax.swing.JOptionPane;
 import Modules.Concesionario.Clases.Rent;
 import Modules.Concesionario.Clases.Sale;
 import Modules.Concesionario.Clases.Singleton;
+import Modules.Concesionario.Clases.Vinyl;
 import Modules.utils.find_functions;
 
 public class create_functions {
@@ -43,12 +44,27 @@ public class create_functions {
 		}
 	}
 
+	////////// create_vinyl ////////////////
 
+	public static void create_vinyl(Vinyl vin) {
+		int location = -1;
 
+		vin = functions_services.ask_vinyl_id(" Cual es el identificador del servicio que quieres crear ?");
+		
 
+		location = find_functions.find_vinyl(vin);
+		
+		if (location != -1) {
 
+			JOptionPane.showMessageDialog(null, "Ya existe este codigo en otro servicio", "Error", JOptionPane.ERROR_MESSAGE);
 
+		} else {
 
+			vin = functions_services.create_vinyl();
+
+			Singleton.Vinyl.add(vin);
+		}
+	}
 
 }	
 

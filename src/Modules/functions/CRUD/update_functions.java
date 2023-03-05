@@ -5,6 +5,7 @@ import javax.swing.JOptionPane;
 import Modules.Concesionario.Clases.Rent;
 import Modules.Concesionario.Clases.Sale;
 import Modules.Concesionario.Clases.Singleton;
+import Modules.Concesionario.Clases.Vinyl;
 import Modules.utils.find_functions;
 
 public class update_functions {
@@ -72,6 +73,42 @@ public class update_functions {
             }else {
 
                 JOptionPane.showMessageDialog(null, "No existe ningún alquiler con este código para poder cambiarlo", "Error", JOptionPane.ERROR_MESSAGE);
+
+            }
+
+        }
+
+    }    
+
+    ////////////// vinilo ///////////
+
+    public static void update_Vinyl(Vinyl vin){
+
+        int location = -1;
+
+        if (Singleton.Vinyl.isEmpty()){
+
+            JOptionPane.showMessageDialog(null, "No existe este servicio para poder cambiar sus características", "Error", JOptionPane.ERROR_MESSAGE);
+
+        }else{
+
+            location = -1;
+
+            vin = functions_services.ask_vinyl_id("¿ Cuál es el identificador del producto que quieres modificar ?");
+
+            location = find_functions.find_vinyl(vin);
+
+            if (location != -1) { 
+
+                vin = Singleton.Vinyl.get(location);
+
+                functions_services.update_Vinyl(vin);
+
+                Singleton.Vinyl.set(location, vin);
+
+            }else {
+
+                JOptionPane.showMessageDialog(null, "No existe ningún vinilado con este código para poder cambiarlo", "Error", JOptionPane.ERROR_MESSAGE);
 
             }
 
